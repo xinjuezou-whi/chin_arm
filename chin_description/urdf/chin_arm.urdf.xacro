@@ -34,6 +34,8 @@
   <xacro:property name="link_12_radius" value="0.02"/>
   <xacro:property name="link_13_height" value="0.077"/>
   <xacro:property name="link_13_radius" value="0.02"/>
+
+  <xacro:property name="with_mesh" value="false"/>
   
   <material name="white">
     <color rgba="1 1 1 1"/>
@@ -90,16 +92,24 @@
       <visual>
 	      <origin xyz="${pos_xyz}" rpy="${pos_rpy}"/>
         <geometry>
-          <!--<mesh filename="package://${description_pkg}/meshes/visual/${name}.dae"/>-->
-          <cylinder length="${link_height}" radius="${link_radius}"/>
+          <xacro:if value="${with_mesh == 'true'}">
+            <mesh filename="package://${description_pkg}/meshes/visual/${name}.dae"/>
+          </xacro:if>
+          <xacro:unless value="${with_mesh == 'true'}">
+            <cylinder length="${link_height}" radius="${link_radius}"/>
+          </xacro:unless>
         </geometry>
         <material name="${visual_color}"/>
       </visual>
       <collision>
 	      <origin xyz="${pos_xyz}" rpy="${pos_rpy}"/>
         <geometry>
-          <!--<mesh filename="package://franka_description/meshes/collision/${name}.stl"/>-->
-          <cylinder length="${link_height}" radius="${link_radius}"/>
+          <xacro:if value="${with_mesh == 'true'}">
+            <mesh filename="package://franka_description/meshes/collision/${name}.stl"/>
+          </xacro:if>
+          <xacro:unless value="${with_mesh == 'true'}">
+            <cylinder length="${link_height}" radius="${link_radius}"/>
+          </xacro:unless>
         </geometry>
       </collision>
       <xacro:if value="${gazebo}">
@@ -126,7 +136,7 @@
   </xacro:link_with_sc>
 
   <!--link1 to link0-->
-  <xacro:link_with_sc name="link1" link_height="${link_1_height}" link_radius="${link_1_radius}" pos_xyz="0 0 ${0.5*link_1_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link1" link_height="${link_1_height}" link_radius="${link_1_radius}" pos_xyz="0 0 ${0.5*link_1_height}" gazebo="${gazebo}">
     <self_collision_geometries>
       <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
     </self_collision_geometries>
@@ -143,9 +153,9 @@
   </joint>
 
   <!--link2 to link1-->
-  <xacro:link_with_sc name="link2" link_height="${link_2_height}" link_radius="${link_2_radius}" pos_xyz="0 0 ${0.5*link_2_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link2" link_height="${link_2_height}" link_radius="${link_2_radius}" pos_xyz="0 0 ${0.5*link_2_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_2_radius+safety_distance}" length="${link_2_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -160,9 +170,9 @@
   </joint>
 
   <!--link3 to link2-->
-  <xacro:link_with_sc name="link3" link_height="${link_3_height}" link_radius="${link_3_radius}" pos_xyz="0 0 ${0.5*link_3_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link3" link_height="${link_3_height}" link_radius="${link_3_radius}" pos_xyz="0 0 ${0.5*link_3_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_3_radius+safety_distance}" length="${link_3_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -177,9 +187,9 @@
   </joint>
 
   <!--link4 to link3-->
-  <xacro:link_with_sc name="link4" link_height="${link_4_height}" link_radius="${link_4_radius}" pos_xyz="0 0 ${0.5*link_4_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link4" link_height="${link_4_height}" link_radius="${link_4_radius}" pos_xyz="0 0 ${0.5*link_4_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_4_radius+safety_distance}" length="${link_4_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -194,9 +204,9 @@
   </joint>
 
   <!--link5 to link4-->
-  <xacro:link_with_sc name="link5" link_height="${link_5_height}" link_radius="${link_5_radius}" pos_xyz="0 0 ${0.5*link_5_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link5" link_height="${link_5_height}" link_radius="${link_5_radius}" pos_xyz="0 0 ${0.5*link_5_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_5_radius+safety_distance}" length="${link_5_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -211,9 +221,9 @@
   </joint>
 
   <!--link6 to link5-->
-  <xacro:link_with_sc name="link6" link_height="${link_6_height}" link_radius="${link_6_radius}" pos_xyz="0 0 ${0.5*link_6_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link6" link_height="${link_6_height}" link_radius="${link_6_radius}" pos_xyz="0 0 ${0.5*link_6_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_6_radius+safety_distance}" length="${link_6_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -228,9 +238,9 @@
   </joint>
 
   <!--link7 to link6-->
-  <xacro:link_with_sc name="link7" link_height="${link_7_height}" link_radius="${link_7_radius}" pos_xyz="0 0 ${0.5*link_7_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link7" link_height="${link_7_height}" link_radius="${link_7_radius}" pos_xyz="0 0 ${0.5*link_7_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_7_radius+safety_distance}" length="${link_7_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -245,9 +255,9 @@
   </joint>
 
   <!--link8 to link7-->
-  <xacro:link_with_sc name="link8" link_height="${link_8_height}" link_radius="${link_8_radius}" pos_xyz="0 0 ${0.5*link_8_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link8" link_height="${link_8_height}" link_radius="${link_8_radius}" pos_xyz="0 0 ${0.5*link_8_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_8_radius+safety_distance}" length="${link_8_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -262,9 +272,9 @@
   </joint>
 
   <!--link9 to link8-->
-  <xacro:link_with_sc name="link9" link_height="${link_9_height}" link_radius="${link_9_radius}" pos_xyz="0 0 ${0.5*link_9_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link9" link_height="${link_9_height}" link_radius="${link_9_radius}" pos_xyz="0 0 ${0.5*link_9_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_9_radius+safety_distance}" length="${link_9_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -279,9 +289,9 @@
   </joint>
 
   <!--link10 to link9-->
-  <xacro:link_with_sc name="link10" link_height="${link_10_height}" link_radius="${link_10_radius}" pos_xyz="0 0 ${0.5*link_10_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link10" link_height="${link_10_height}" link_radius="${link_10_radius}" pos_xyz="0 0 ${0.5*link_10_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_10_radius+safety_distance}" length="${link_10_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -296,9 +306,9 @@
   </joint>
 
   <!--link11 to link10-->
-  <xacro:link_with_sc name="link11" link_height="${link_11_height}" link_radius="${link_11_radius}" pos_xyz="0 0 ${0.5*link_11_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link11" link_height="${link_11_height}" link_radius="${link_11_radius}" pos_xyz="0 0 ${0.5*link_11_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_11_radius+safety_distance}" length="${link_11_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -313,9 +323,9 @@
   </joint>
 
   <!--link12 to link11-->
-  <xacro:link_with_sc name="link12" link_height="${link_12_height}" link_radius="${link_12_radius}" pos_xyz="0 0 ${0.5*link_12_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link12" link_height="${link_12_height}" link_radius="${link_12_radius}" pos_xyz="0 0 ${0.5*link_12_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_12_radius+safety_distance}" length="${link_12_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
@@ -330,9 +340,9 @@
   </joint>
 
   <!--link13 to link12-->
-  <xacro:link_with_sc name="link13" link_height="${link_13_height}" link_radius="${link_13_radius}" pos_xyz="0 0 ${0.5*link_13_height}" pos_rpy="0 0 0" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link13" link_height="${link_13_height}" link_radius="${link_13_radius}" pos_xyz="0 0 ${0.5*link_13_height}" gazebo="${gazebo}">
     <self_collision_geometries>
-      <xacro:collision_capsule xyz="0 0 0" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
+      <xacro:collision_capsule xyz="0 0 0" radius="${link_13_radius+safety_distance}" length="${link_13_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
 
