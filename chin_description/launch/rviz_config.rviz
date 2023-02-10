@@ -77,6 +77,50 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        chin_link10:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link10_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link11:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link11_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link12:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link12_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link13:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link13_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link14:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
         chin_link1_sc:
           Alpha: 1
           Show Axes: false
@@ -98,6 +142,66 @@ Visualization Manager:
           Show Trail: false
           Value: true
         chin_link3_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link4:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link4_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link5:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link5_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link6:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link6_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link7:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link7_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link8:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link8_sc:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link9:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        chin_link9_sc:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -119,6 +223,24 @@ Visualization Manager:
           Value: true
         chin_link1:
           Value: true
+        chin_link10:
+          Value: true
+        chin_link10_sc:
+          Value: true
+        chin_link11:
+          Value: true
+        chin_link11_sc:
+          Value: true
+        chin_link12:
+          Value: true
+        chin_link12_sc:
+          Value: true
+        chin_link13:
+          Value: true
+        chin_link13_sc:
+          Value: true
+        chin_link14:
+          Value: true
         chin_link1_sc:
           Value: true
         chin_link2:
@@ -128,6 +250,30 @@ Visualization Manager:
         chin_link3:
           Value: true
         chin_link3_sc:
+          Value: true
+        chin_link4:
+          Value: true
+        chin_link4_sc:
+          Value: true
+        chin_link5:
+          Value: true
+        chin_link5_sc:
+          Value: true
+        chin_link6:
+          Value: true
+        chin_link6_sc:
+          Value: true
+        chin_link7:
+          Value: true
+        chin_link7_sc:
+          Value: true
+        chin_link8:
+          Value: true
+        chin_link8_sc:
+          Value: true
+        chin_link9:
+          Value: true
+        chin_link9_sc:
           Value: true
       Marker Scale: 0.5
       Name: TF
@@ -147,6 +293,38 @@ Visualization Manager:
               chin_link3:
                 chin_link3_sc:
                   {}
+                chin_link4:
+                  chin_link4_sc:
+                    {}
+                  chin_link5:
+                    chin_link5_sc:
+                      {}
+                    chin_link6:
+                      chin_link6_sc:
+                        {}
+                      chin_link7:
+                        chin_link7_sc:
+                          {}
+                        chin_link8:
+                          chin_link8_sc:
+                            {}
+                          chin_link9:
+                            chin_link10:
+                              chin_link10_sc:
+                                {}
+                              chin_link11:
+                                chin_link11_sc:
+                                  {}
+                                chin_link12:
+                                  chin_link12_sc:
+                                    {}
+                                  chin_link13:
+                                    chin_link13_sc:
+                                      {}
+                                    chin_link14:
+                                      {}
+                            chin_link9_sc:
+                              {}
       Update Interval: 0
       Value: true
   Enabled: true
@@ -192,10 +370,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.009795382618904114
+      Pitch: -0.020204611122608185
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.4004071354866028
+      Yaw: 3.133589029312134
     Saved: ~
 Window Geometry:
   Displays:

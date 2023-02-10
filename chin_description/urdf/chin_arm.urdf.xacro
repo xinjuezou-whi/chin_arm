@@ -7,33 +7,33 @@
   <xacro:property name="safety_distance" value="0"/>
   
   <xacro:property name="link_base_height" value="0.204"/>
-  <xacro:property name="link_base_radius" value="0.2"/>
+  <xacro:property name="link_base_radius" value="0.095"/>
   <xacro:property name="link_1_height" value="0.081"/>
-  <xacro:property name="link_1_radius" value="0.02"/>
+  <xacro:property name="link_1_radius" value="0.066"/>
   <xacro:property name="link_2_height" value="0.082"/>
-  <xacro:property name="link_2_radius" value="0.02"/>
+  <xacro:property name="link_2_radius" value="0.066"/>
   <xacro:property name="link_3_height" value="0.07"/>
-  <xacro:property name="link_3_radius" value="0.02"/>
+  <xacro:property name="link_3_radius" value="0.066"/>
   <xacro:property name="link_4_height" value="0.398"/>
-  <xacro:property name="link_4_radius" value="0.02"/>
+  <xacro:property name="link_4_radius" value="0.055"/>
   <xacro:property name="link_5_height" value="0.065"/>
-  <xacro:property name="link_5_radius" value="0.02"/>
+  <xacro:property name="link_5_radius" value="0.055"/>
   <xacro:property name="link_6_height" value="0.063"/>
-  <xacro:property name="link_6_radius" value="0.02"/>
+  <xacro:property name="link_6_radius" value="0.055"/>
   <xacro:property name="link_7_height" value="0.36"/>
-  <xacro:property name="link_7_radius" value="0.02"/>
+  <xacro:property name="link_7_radius" value="0.045"/>
   <xacro:property name="link_8_height" value="0.083"/>
-  <xacro:property name="link_8_radius" value="0.02"/>
+  <xacro:property name="link_8_radius" value="0.045"/>
   <xacro:property name="link_9_height" value="0.087"/>
-  <xacro:property name="link_9_radius" value="0.02"/>
+  <xacro:property name="link_9_radius" value="0.045"/>
   <xacro:property name="link_10_height" value="0.083"/>
-  <xacro:property name="link_10_radius" value="0.02"/>
+  <xacro:property name="link_10_radius" value="0.045"/>
   <xacro:property name="link_11_height" value="0.087"/>
-  <xacro:property name="link_11_radius" value="0.02"/>
+  <xacro:property name="link_11_radius" value="0.045"/>
   <xacro:property name="link_12_height" value="0.083"/>
-  <xacro:property name="link_12_radius" value="0.02"/>
+  <xacro:property name="link_12_radius" value="0.045"/>
   <xacro:property name="link_13_height" value="0.077"/>
-  <xacro:property name="link_13_radius" value="0.02"/>
+  <xacro:property name="link_13_radius" value="0.045"/>
 
   <xacro:property name="with_mesh" value="false"/>
   
@@ -143,12 +143,12 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint1" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_base_height}"/>
     <parent link="${arm_id}_link0"/>
     <child link="${arm_id}_link1"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -160,12 +160,10 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint2" type="fixed">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
     <origin rpy="${-0.5*pi} 0 0" xyz="0 0 ${link_1_height}"/>
     <parent link="${arm_id}_link1"/>
     <child link="${arm_id}_link2"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -177,12 +175,12 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint3" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_2_height}"/>
     <parent link="${arm_id}_link2"/>
     <child link="${arm_id}_link3"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -194,12 +192,10 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint4" type="fixed">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
     <origin rpy="${0.5*pi} 0 0" xyz="0 0 ${link_3_height}"/>
     <parent link="${arm_id}_link3"/>
     <child link="${arm_id}_link4"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -211,12 +207,10 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint5" type="fixed">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
     <origin rpy="${0.5*pi} 0 0" xyz="0 0 ${link_4_height}"/>
     <parent link="${arm_id}_link4"/>
     <child link="${arm_id}_link5"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -228,12 +222,12 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint6" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.7925" soft_upper_limit="2.7925"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_5_height}"/>
     <parent link="${arm_id}_link5"/>
     <child link="${arm_id}_link6"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="-2.7925" upper="2.7925" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -245,12 +239,10 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint7" type="fixed">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
     <origin rpy="${-0.5*pi} 0 0" xyz="0 0 ${link_6_height}"/>
     <parent link="${arm_id}_link6"/>
     <child link="${arm_id}_link7"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -262,12 +254,10 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint8" type="fixed">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
     <origin rpy="${-0.5*pi} 0 0" xyz="0 0 ${link_7_height}"/>
     <parent link="${arm_id}_link7"/>
     <child link="${arm_id}_link8"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -279,12 +269,12 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint9" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_8_height}"/>
     <parent link="${arm_id}_link8"/>
     <child link="${arm_id}_link9"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -296,12 +286,10 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint10" type="fixed">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
     <origin rpy="${0.5*pi} 0 0" xyz="0 0 ${link_9_height}"/>
     <parent link="${arm_id}_link9"/>
     <child link="${arm_id}_link10"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -313,12 +301,12 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint11" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_10_height}"/>
     <parent link="${arm_id}_link10"/>
     <child link="${arm_id}_link11"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -330,12 +318,10 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint12" type="fixed">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
     <origin rpy="${-0.5*pi} 0 0" xyz="0 0 ${link_11_height}"/>
     <parent link="${arm_id}_link11"/>
     <child link="${arm_id}_link12"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -347,12 +333,12 @@
   </xacro:link_with_sc>
 
   <joint name="${arm_id}_joint13" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_12_height}"/>
     <parent link="${arm_id}_link12"/>
     <child link="${arm_id}_link13"/>
-    <axis xyz="0 0 1" />
-    <limit lower="-2.8973" upper="2.8973" effort="0" velocity="0"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
