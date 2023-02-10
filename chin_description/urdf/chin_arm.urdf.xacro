@@ -346,7 +346,7 @@
   <link name="${arm_id}_link14"/>
 
   <joint name="${arm_id}_joint14" type="fixed">
-    <origin rpy="0 0 0" xyz="0 0 ${link_13_height}"/>
+    <origin rpy="0 0 ${-pi}" xyz="0 0 ${link_13_height}"/>
     <parent link="${arm_id}_link13"/>
     <child link="${arm_id}_link14"/>
   </joint>
