@@ -43,6 +43,9 @@
   <material name="blue">
     <color rgba="0 0 0.8 1"/>
   </material>
+  <material name="silver">
+    <color rgba="0.51 0.54 0.59 1"/>
+  </material>
   
   <!-- =========================================================== -->
   <!-- add a <collision> tag with a capsule, made from a cylinder  -->
@@ -326,7 +329,7 @@
   </joint>
 
   <!--link13 to link12-->
-  <xacro:link_with_sc name="link13" link_height="${link_13_height}" link_radius="${link_13_radius}" pos_xyz="0 0 ${0.5*link_13_height}" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link13" link_height="${link_13_height}" link_radius="${link_13_radius}" pos_xyz="0 0 ${0.5*link_13_height}" gazebo="${gazebo}" visual_color="silver">
     <self_collision_geometries>
       <xacro:collision_capsule xyz="0 0 0" radius="${link_13_radius+safety_distance}" length="${link_13_height+safety_distance}"/>
     </self_collision_geometries>
