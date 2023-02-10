@@ -1,0 +1,12 @@
+controller_list:
+  - name: arm_position_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - chin_joint1
+      - chin_joint3
+      - chin_joint6
+      - chin_joint9
+      - chin_joint11
+      - chin_joint13
