@@ -19,7 +19,7 @@
   <arg name="max_safe_path_cost" default="1"/>
   <arg name="publish_monitored_planning_scene" default="true"/>
 
-  <arg name="capabilities" default=""/>
+  <!--<arg name="capabilities" default=""/>-->
   <arg name="disable_capabilities" default=""/>
   <!-- load these non-default MoveGroup capabilities (space seperated) -->
   <!--
@@ -28,6 +28,9 @@
                 another_package/GraspPlanningPipeline
                 " />
   -->
+  <arg name="capabilities" value="
+                move_group/ExecuteTaskSolutionCapability
+                "/>
 
   <!-- inhibit these default MoveGroup capabilities (space seperated) -->
   <!--
