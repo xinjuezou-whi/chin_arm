@@ -6,6 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
+        - /RobotModel1
         - /TF1
       Splitter Ratio: 0.5
     Tree Height: 410
@@ -63,145 +64,51 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        chin_link0:
+        chin_link_0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link0_sc:
+        chin_link_0_sc:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-        chin_link1:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link10:
+        chin_link_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link10_sc:
+        chin_link_1_sc:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link11:
+        chin_link_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link11_sc:
+        chin_link_2_sc:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link12:
+        chin_link_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link12_sc:
+        chin_link_3_sc:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link13:
+        chin_link_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link13_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link14:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        chin_link1_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link2_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link3_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link4_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link5_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link6_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link7:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link7_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link8:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link8_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link9:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link9_sc:
+        chin_link_4_sc:
           Alpha: 1
           Show Axes: false
           Show Trail: false
@@ -217,63 +124,25 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        chin_link0:
+        chin_link_0:
           Value: true
-        chin_link0_sc:
+        chin_link_0_sc:
           Value: true
-        chin_link1:
+        chin_link_1:
           Value: true
-        chin_link10:
+        chin_link_1_sc:
           Value: true
-        chin_link10_sc:
+        chin_link_2:
           Value: true
-        chin_link11:
+        chin_link_2_sc:
           Value: true
-        chin_link11_sc:
+        chin_link_3:
           Value: true
-        chin_link12:
+        chin_link_3_sc:
           Value: true
-        chin_link12_sc:
+        chin_link_4:
           Value: true
-        chin_link13:
-          Value: true
-        chin_link13_sc:
-          Value: true
-        chin_link14:
-          Value: true
-        chin_link1_sc:
-          Value: true
-        chin_link2:
-          Value: true
-        chin_link2_sc:
-          Value: true
-        chin_link3:
-          Value: true
-        chin_link3_sc:
-          Value: true
-        chin_link4:
-          Value: true
-        chin_link4_sc:
-          Value: true
-        chin_link5:
-          Value: true
-        chin_link5_sc:
-          Value: true
-        chin_link6:
-          Value: true
-        chin_link6_sc:
-          Value: true
-        chin_link7:
-          Value: true
-        chin_link7_sc:
-          Value: true
-        chin_link8:
-          Value: true
-        chin_link8_sc:
-          Value: true
-        chin_link9:
-          Value: true
-        chin_link9_sc:
+        chin_link_4_sc:
           Value: true
       Marker Scale: 0.5
       Name: TF
@@ -281,57 +150,28 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        chin_link0:
-          chin_link0_sc:
+        chin_link_0:
+          chin_link_0_sc:
             {}
-          chin_link1:
-            chin_link1_sc:
+          chin_link_1:
+            chin_link_1_sc:
               {}
-            chin_link2:
-              chin_link2_sc:
+            chin_link_2:
+              chin_link_2_sc:
                 {}
-              chin_link3:
-                chin_link3_sc:
+              chin_link_3:
+                chin_link_3_sc:
                   {}
-                chin_link4:
-                  chin_link4_sc:
+                chin_link_4:
+                  chin_link_4_sc:
                     {}
-                  chin_link5:
-                    chin_link5_sc:
-                      {}
-                    chin_link6:
-                      chin_link6_sc:
-                        {}
-                      chin_link7:
-                        chin_link7_sc:
-                          {}
-                        chin_link8:
-                          chin_link8_sc:
-                            {}
-                          chin_link9:
-                            chin_link10:
-                              chin_link10_sc:
-                                {}
-                              chin_link11:
-                                chin_link11_sc:
-                                  {}
-                                chin_link12:
-                                  chin_link12_sc:
-                                    {}
-                                  chin_link13:
-                                    chin_link13_sc:
-                                      {}
-                                    chin_link14:
-                                      {}
-                            chin_link9_sc:
-                              {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: chin_link0
+    Fixed Frame: chin_link_0
     Frame Rate: 30
   Name: root
   Tools:
@@ -355,16 +195,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.0060665607452393
+      Distance: 2.108692169189453
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.1213284507393837
-        Y: 0.040046222507953644
-        Z: 0.7263514995574951
+        X: -0.1214236468076706
+        Y: 0.07528999447822571
+        Z: 0.7450164556503296
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
