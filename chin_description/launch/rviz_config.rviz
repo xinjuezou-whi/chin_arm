@@ -64,149 +64,45 @@ Visualization Manager:
         Expand Link Details: false
         Expand Tree: false
         Link Tree Style: Links in Alphabetic Order
-        chin_link0:
+        chin_link_0:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link0_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        chin_link1:
+        chin_link_1:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link10:
+        chin_link_2:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link10_sc:
+        chin_link_3:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link11:
+        chin_link_4:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link11_sc:
+        chin_link_5:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link12:
+        chin_link_6:
           Alpha: 1
           Show Axes: false
           Show Trail: false
           Value: true
-        chin_link12_sc:
+        chin_link_7:
           Alpha: 1
           Show Axes: false
           Show Trail: false
-          Value: true
-        chin_link13:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link13_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link14:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-        chin_link1_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link2:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link2_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link3:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link3_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link4:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link4_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link5:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link5_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link6:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link6_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link7:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link7_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link8:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link8_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link9:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
-        chin_link9_sc:
-          Alpha: 1
-          Show Axes: false
-          Show Trail: false
-          Value: true
       Name: RobotModel
       Robot Description: robot_description
       TF Prefix: ""
@@ -218,63 +114,21 @@ Visualization Manager:
       Frame Timeout: 15
       Frames:
         All Enabled: true
-        chin_link0:
+        chin_link_0:
           Value: true
-        chin_link0_sc:
+        chin_link_1:
           Value: true
-        chin_link1:
+        chin_link_2:
           Value: true
-        chin_link10:
+        chin_link_3:
           Value: true
-        chin_link10_sc:
+        chin_link_4:
           Value: true
-        chin_link11:
+        chin_link_5:
           Value: true
-        chin_link11_sc:
+        chin_link_6:
           Value: true
-        chin_link12:
-          Value: true
-        chin_link12_sc:
-          Value: true
-        chin_link13:
-          Value: true
-        chin_link13_sc:
-          Value: true
-        chin_link14:
-          Value: true
-        chin_link1_sc:
-          Value: true
-        chin_link2:
-          Value: true
-        chin_link2_sc:
-          Value: true
-        chin_link3:
-          Value: true
-        chin_link3_sc:
-          Value: true
-        chin_link4:
-          Value: true
-        chin_link4_sc:
-          Value: true
-        chin_link5:
-          Value: true
-        chin_link5_sc:
-          Value: true
-        chin_link6:
-          Value: true
-        chin_link6_sc:
-          Value: true
-        chin_link7:
-          Value: true
-        chin_link7_sc:
-          Value: true
-        chin_link8:
-          Value: true
-        chin_link8_sc:
-          Value: true
-        chin_link9:
-          Value: true
-        chin_link9_sc:
+        chin_link_7:
           Value: true
       Marker Scale: 0.5
       Name: TF
@@ -282,57 +136,22 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        chin_link0:
-          chin_link0_sc:
-            {}
-          chin_link1:
-            chin_link1_sc:
-              {}
-            chin_link2:
-              chin_link2_sc:
-                {}
-              chin_link3:
-                chin_link3_sc:
-                  {}
-                chin_link4:
-                  chin_link4_sc:
-                    {}
-                  chin_link5:
-                    chin_link5_sc:
-                      {}
-                    chin_link6:
-                      chin_link6_sc:
+        chin_link_0:
+          chin_link_1:
+            chin_link_2:
+              chin_link_3:
+                chin_link_4:
+                  chin_link_5:
+                    chin_link_6:
+                      chin_link_7:
                         {}
-                      chin_link7:
-                        chin_link7_sc:
-                          {}
-                        chin_link8:
-                          chin_link8_sc:
-                            {}
-                          chin_link9:
-                            chin_link10:
-                              chin_link10_sc:
-                                {}
-                              chin_link11:
-                                chin_link11_sc:
-                                  {}
-                                chin_link12:
-                                  chin_link12_sc:
-                                    {}
-                                  chin_link13:
-                                    chin_link13_sc:
-                                      {}
-                                    chin_link14:
-                                      {}
-                            chin_link9_sc:
-                              {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: chin_link0
+    Fixed Frame: chin_link_0
     Frame Rate: 30
   Name: root
   Tools:
