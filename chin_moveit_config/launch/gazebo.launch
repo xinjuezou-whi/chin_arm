@@ -3,7 +3,7 @@
   <arg name="paused" default="false"/>
   <arg name="gazebo_gui" default="true"/>
   <arg name="initial_joint_positions" doc="Initial joint configuration of the robot"
-       default=" -J chin_joint1 0 -J chin_joint11 0 -J chin_joint13 0 -J chin_joint3 0 -J chin_joint6 0 -J chin_joint9 0"/>
+       default=" -J chin_joint_1 0 -J chin_joint_2 0 -J chin_joint_3 0 -J chin_joint_4 0 -J chin_joint_5 0 -J chin_joint_6 0"/>
 
   <!-- startup simulated world -->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -13,7 +13,7 @@
   </include>
 
   <!-- send robot urdf to param server -->
-  <param name="robot_description" textfile="$(find chin_moveit_config)/config/gazebo_chin_arm.urdf" />
+  <param name="robot_description" command="xacro  '$(find chin_description)/urdf/chin_arm.urdf.xacro'" />
 
   <!-- unpause only after loading robot model -->
   <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />

@@ -2,7 +2,7 @@
 <launch>
   <!-- argument -->
   <arg name="arm" default="chin"/>
-  <arg name="type" default=""/>
+  <arg name="type" default="_frame"/>
   <!--<arg name="type" default="_frame"/>-->
   <arg name="pkg_path" default="$(eval '$(find ' + arg('arm') + '_description)')"/>
 

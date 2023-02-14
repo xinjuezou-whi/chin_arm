@@ -1,0 +1,18 @@
+controller_list:
+  - name: chin_arm/controllers/position
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - chin_joint_1
+      - chin_joint_3
+      - chin_joint_6
+      - chin_joint_9
+      - chin_joint_11
+      - chin_joint_13
+  - name: fake_chin_eef_controller
+    type: $(arg fake_execution_type)
+    joints:
+      []
+initial:  # Define initial robot poses per group
+  - group: chin_arm
+    pose: home

@@ -70,149 +70,45 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          chin_link0:
+          chin_link_0:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link0_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          chin_link1:
+          chin_link_1:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link10:
+          chin_link_2:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link10_sc:
+          chin_link_3:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link11:
+          chin_link_4:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link11_sc:
+          chin_link_5:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link12:
+          chin_link_6:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link12_sc:
+          chin_link_7:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-            Value: true
-          chin_link13:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link13_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link14:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          chin_link1_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link2:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link2_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link3:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link3_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link4:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link4_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link5:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link5_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link6:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link6_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link7:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link7_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link8:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link8_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link9:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link9_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
         Loop Animation: false
         Robot Alpha: 0.5
         Robot Color: 150; 50; 150
@@ -259,149 +155,45 @@ Visualization Manager:
           Expand Link Details: false
           Expand Tree: false
           Link Tree Style: Links in Alphabetic Order
-          chin_link0:
+          chin_link_0:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link0_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          chin_link1:
+          chin_link_1:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link10:
+          chin_link_2:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link10_sc:
+          chin_link_3:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link11:
+          chin_link_4:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link11_sc:
+          chin_link_5:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link12:
+          chin_link_6:
             Alpha: 1
             Show Axes: false
             Show Trail: false
             Value: true
-          chin_link12_sc:
+          chin_link_7:
             Alpha: 1
             Show Axes: false
             Show Trail: false
-            Value: true
-          chin_link13:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link13_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link14:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-          chin_link1_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link2:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link2_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link3:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link3_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link4:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link4_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link5:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link5_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link6:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link6_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link7:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link7_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link8:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link8_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link9:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          chin_link9_sc:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
         Robot Alpha: 0.5
         Show Robot Collision: false
         Show Robot Visual: true
@@ -411,7 +203,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: chin_link0
+    Fixed Frame: chin_link_0
     Frame Rate: 30
   Name: root
   Tools:
@@ -423,25 +215,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.8098559379577637
+      Distance: 2.7295145988464355
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -0.0006501132156699896
-        Y: 0.02816024422645569
-        Z: 0.5589612126350403
+        X: -0.24020379781723022
+        Y: 0.2825348675251007
+        Z: 0.5431514978408813
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.16500014066696167
-      Target Frame: chin_link0
+      Pitch: 0.5
+      Target Frame: chin_link_0
       Value: Orbit (rviz)
-      Yaw: 3.1349408626556396
+      Yaw: -0.6232355833053589
     Saved: ~
 Window Geometry:
   Displays:

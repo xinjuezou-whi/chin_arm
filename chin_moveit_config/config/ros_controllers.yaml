@@ -1,39 +1,39 @@
 arm_position_controller:
   type: position_controllers/JointTrajectoryController
   joints:
-    - chin_joint1
-    - chin_joint3
-    - chin_joint6
-    - chin_joint9
-    - chin_joint11
-    - chin_joint13
+    - chin_joint_1
+    - chin_joint_2
+    - chin_joint_3
+    - chin_joint_4
+    - chin_joint_5
+    - chin_joint_6
   gains:
-    chin_joint1:
+    chin_joint_1:
       p: 100
       d: 1
       i: 1
       i_clamp: 1
-    chin_joint3:
+    chin_joint_2:
       p: 100
       d: 1
       i: 1
       i_clamp: 1
-    chin_joint6:
+    chin_joint_3:
       p: 100
       d: 1
       i: 1
       i_clamp: 1
-    chin_joint9:
+    chin_joint_4:
       p: 100
       d: 1
       i: 1
       i_clamp: 1
-    chin_joint11:
+    chin_joint_5:
       p: 100
       d: 1
       i: 1
       i_clamp: 1
-    chin_joint13:
+    chin_joint_6:
       p: 100
       d: 1
       i: 1

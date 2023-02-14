@@ -2,12 +2,12 @@ controller_list:
   - name: fake_chin_arm_controller
     type: $(arg fake_execution_type)
     joints:
-      - chin_joint1
-      - chin_joint3
-      - chin_joint6
-      - chin_joint9
-      - chin_joint11
-      - chin_joint13
+      - chin_joint_1
+      - chin_joint_2
+      - chin_joint_3
+      - chin_joint_4
+      - chin_joint_5
+      - chin_joint_6
   - name: fake_chin_eef_controller
     type: $(arg fake_execution_type)
     joints:
