@@ -104,7 +104,9 @@
             <cylinder length="${link_height}" radius="${link_radius}"/>
           </xacro:unless>
         </geometry>
-        <material name="${visual_color}"/>
+        <xacro:unless value="${mesh == 'yes'}">
+          <material name="${visual_color}"/>
+        </xacro:unless>
       </visual>
       <collision>
 	      <origin xyz="${pos_xyz}" rpy="${pos_rpy}"/>
@@ -141,19 +143,18 @@
   </xacro:link_with_sc>
 
   <!--link1 to link0-->
-  <xacro:link_with_sc name="link1" link_height="${link_1_height}" link_radius="${link_1_radius}" pos_xyz="0 0 ${0.5*link_1_height}" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link1" link_height="${link_1_height}" link_radius="${link_1_radius}" pos_xyz="0 0 ${0.5*link_1_height}" visual_color="silver" gazebo="${gazebo}">
     <self_collision_geometries>
       <xacro:collision_capsule xyz="0 0 ${0.5*link_1_height}" radius="${link_1_radius+safety_distance}" length="${link_1_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint1" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_base_height}"/>
     <parent link="${arm_id}_link0"/>
     <child link="${arm_id}_link1"/>
     <axis xyz="0 0 1"/>
-    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -163,9 +164,8 @@
       <xacro:collision_capsule xyz="0 0 ${0.5*link_2_height}" radius="${link_2_radius+safety_distance}" length="${link_2_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint2" type="fixed">
-    <origin rpy="${-0.5*pi} 0 0" xyz="0 0 ${link_1_height}"/>
+    <origin rpy="-${0.5*pi} 0 0" xyz="0 0 ${link_1_height}"/>
     <parent link="${arm_id}_link1"/>
     <child link="${arm_id}_link2"/>
     <axis xyz="0 0 1"/>
@@ -173,19 +173,18 @@
   </joint>
 
   <!--link3 to link2-->
-  <xacro:link_with_sc name="link3" link_height="${link_3_height}" link_radius="${link_3_radius}" pos_xyz="0 0 ${0.5*link_3_height}" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link3" link_height="${link_3_height}" link_radius="${link_3_radius}" pos_xyz="0 0 ${0.5*link_3_height}" visual_color="silver" gazebo="${gazebo}">
     <self_collision_geometries>
       <xacro:collision_capsule xyz="0 0 ${0.5*link_3_height}" radius="${link_3_radius+safety_distance}" length="${link_3_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint3" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_2_height}"/>
     <parent link="${arm_id}_link2"/>
     <child link="${arm_id}_link3"/>
     <axis xyz="0 0 1"/>
-    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -195,7 +194,6 @@
       <xacro:collision_capsule xyz="0 0 ${0.5*link_4_height}" radius="${link_4_radius+safety_distance}" length="${link_4_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint4" type="fixed">
     <origin rpy="${0.5*pi} 0 0" xyz="0 0 ${link_3_height}"/>
     <parent link="${arm_id}_link3"/>
@@ -210,7 +208,6 @@
       <xacro:collision_capsule xyz="0 0 ${0.5*link_5_height}" radius="${link_5_radius+safety_distance}" length="${link_5_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint5" type="fixed">
     <origin rpy="${0.5*pi} 0 0" xyz="0 0 ${link_4_height}"/>
     <parent link="${arm_id}_link4"/>
@@ -220,12 +217,11 @@
   </joint>
 
   <!--link6 to link5-->
-  <xacro:link_with_sc name="link6" link_height="${link_6_height}" link_radius="${link_6_radius}" pos_xyz="0 0 ${0.5*link_6_height}" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link6" link_height="${link_6_height}" link_radius="${link_6_radius}" pos_xyz="0 0 ${0.5*link_6_height}" visual_color="silver" gazebo="${gazebo}">
     <self_collision_geometries>
       <xacro:collision_capsule xyz="0 0 ${0.5*link_6_height}" radius="${link_6_radius+safety_distance}" length="${link_6_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint6" type="revolute">
     <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.7925" soft_upper_limit="2.7925"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_5_height}"/>
@@ -242,9 +238,8 @@
       <xacro:collision_capsule xyz="0 0 ${0.5*link_7_height}" radius="${link_7_radius+safety_distance}" length="${link_7_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint7" type="fixed">
-    <origin rpy="${-0.5*pi} 0 0" xyz="0 0 ${link_6_height}"/>
+    <origin rpy="-${0.5*pi} 0 0" xyz="0 0 ${link_6_height}"/>
     <parent link="${arm_id}_link6"/>
     <child link="${arm_id}_link7"/>
     <axis xyz="0 0 1"/>
@@ -257,9 +252,8 @@
       <xacro:collision_capsule xyz="0 0 ${0.5*link_8_height}" radius="${link_8_radius+safety_distance}" length="${link_8_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint8" type="fixed">
-    <origin rpy="${-0.5*pi} 0 0" xyz="0 0 ${link_7_height}"/>
+    <origin rpy="-${0.5*pi} 0 0" xyz="0 0 ${link_7_height}"/>
     <parent link="${arm_id}_link7"/>
     <child link="${arm_id}_link8"/>
     <axis xyz="0 0 1"/>
@@ -267,19 +261,18 @@
   </joint>
 
   <!--link9 to link8-->
-  <xacro:link_with_sc name="link9" link_height="${link_9_height}" link_radius="${link_9_radius}" pos_xyz="0 0 ${0.5*link_9_height}" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link9" link_height="${link_9_height}" link_radius="${link_9_radius}" pos_xyz="0 0 ${0.5*link_9_height}" visual_color="silver" gazebo="${gazebo}">
     <self_collision_geometries>
       <xacro:collision_capsule xyz="0 0 ${0.5*link_9_height}" radius="${link_9_radius+safety_distance}" length="${link_9_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint9" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_8_height}"/>
     <parent link="${arm_id}_link8"/>
     <child link="${arm_id}_link9"/>
     <axis xyz="0 0 1"/>
-    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -289,7 +282,6 @@
       <xacro:collision_capsule xyz="0 0 ${0.5*link_10_height}" radius="${link_10_radius+safety_distance}" length="${link_10_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint10" type="fixed">
     <origin rpy="${0.5*pi} 0 0" xyz="0 0 ${link_9_height}"/>
     <parent link="${arm_id}_link9"/>
@@ -299,19 +291,18 @@
   </joint>
 
   <!--link11 to link10-->
-  <xacro:link_with_sc name="link11" link_height="${link_11_height}" link_radius="${link_11_radius}" pos_xyz="0 0 ${0.5*link_11_height}" gazebo="${gazebo}">
+  <xacro:link_with_sc name="link11" link_height="${link_11_height}" link_radius="${link_11_radius}" pos_xyz="0 0 ${0.5*link_11_height}" visual_color="silver" gazebo="${gazebo}">
     <self_collision_geometries>
       <xacro:collision_capsule xyz="0 0 ${0.5*link_11_height}" radius="${link_11_radius+safety_distance}" length="${link_11_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint11" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_10_height}"/>
     <parent link="${arm_id}_link10"/>
     <child link="${arm_id}_link11"/>
     <axis xyz="0 0 1"/>
-    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -321,9 +312,8 @@
       <xacro:collision_capsule xyz="0 0 ${0.5*link_12_height}" radius="${link_12_radius+safety_distance}" length="${link_12_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint12" type="fixed">
-    <origin rpy="${-0.5*pi} 0 0" xyz="0 0 ${link_11_height}"/>
+    <origin rpy="-${0.5*pi} 0 0" xyz="0 0 ${link_11_height}"/>
     <parent link="${arm_id}_link11"/>
     <child link="${arm_id}_link12"/>
     <axis xyz="0 0 1"/>
@@ -331,27 +321,25 @@
   </joint>
 
   <!--link13 to link12-->
-  <xacro:link_with_sc name="link13" link_height="${link_13_height}" link_radius="${link_13_radius}" pos_xyz="0 0 ${0.5*link_13_height}" gazebo="${gazebo}" visual_color="silver">
+  <xacro:link_with_sc name="link13" link_height="${link_13_height}" link_radius="${link_13_radius}" pos_xyz="0 0 ${0.5*link_13_height}" visual_color="silver" gazebo="${gazebo}">
     <self_collision_geometries>
       <xacro:collision_capsule xyz="0 0 ${0.5*link_13_height}" radius="${link_13_radius+safety_distance}" length="${link_13_height+safety_distance}"/>
     </self_collision_geometries>
   </xacro:link_with_sc>
-
   <joint name="${arm_id}_joint13" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_12_height}"/>
     <parent link="${arm_id}_link12"/>
     <child link="${arm_id}_link13"/>
     <axis xyz="0 0 1"/>
-    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
   <!--link14 to link13-->
   <link name="${arm_id}_link14"/>
-
   <joint name="${arm_id}_joint14" type="fixed">
-    <origin rpy="0 0 ${-pi}" xyz="0 0 ${link_13_height}"/>
+    <origin rpy="0 0 -${pi}" xyz="0 0 ${link_13_height}"/>
     <parent link="${arm_id}_link13"/>
     <child link="${arm_id}_link14"/>
   </joint>
