@@ -2,9 +2,8 @@
 <launch>
   <!-- argument -->
   <arg name="arm" default="chin"/>
-  <arg name="type" default="_frame"/>
-  <!--<arg name="type" default="_frame"/>-->
-  <arg name="pkg_path" default="$(eval '$(find ' + arg('arm') + '_description)')"/>
+  <arg name="type" default=""/>
+  <arg name="pkg_path" default="$(eval '$(find ' + arg('arm') + '_description' + arg('type') + ')')"/>
 
   <!-- depends on ros-<ros distro>-joint-state-publisher-gui, install with command: sudo apt install ros-<ros distro>-joint-state-publisher-gui -->
   <!-- urdf and robot state publisher -->
