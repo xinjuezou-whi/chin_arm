@@ -43,7 +43,7 @@ For how to use the MoveIt planning, please refer to the [tutorial of MoveIt](htt
 ### Control the real arm
 Please note that the controller interface is required for controlling the real arm. This package doesn't include the controller interface. But this package do leaves the bringup launch file and controller configuration file for the real controller. For real controller, the "moveit_controller_manager" is named as "chin_arm" with type "FollowJointTrajectory", and the controller is named as "chin_arm/controllers/position". If you are going to build your own real controller, please refer to such two files for synchronizing the type and name
 
-The following video demonstrates the real arm control of Chin with WHI's motion interface:
+The following video demonstrates the real arm control of Chin with WHI's controller interface:
 ![chin_real_arm](https://user-images.githubusercontent.com/72239958/219322441-8f9dced2-a9ee-40ef-82f2-4eb5001caff8.gif)
 
 ## Configure arm
