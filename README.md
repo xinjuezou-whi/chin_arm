@@ -45,3 +45,13 @@ Please note that the motion interface is required for controlling the real arm. 
 
 The following video demonstrates the real arm control of Chin with WHI's motion interface:
 ![chin_real_arm](https://user-images.githubusercontent.com/72239958/219322441-8f9dced2-a9ee-40ef-82f2-4eb5001caff8.gif)
+
+## Configure arm
+By default, this package sets two fixed positions: home and ready, which can be used as the goal state for planning. Besides the fixed position, there are more settings MoveIt can make with the tool: "[MoveIt Setup Assistant](https://ros-planning.github.io/moveit_tutorials/doc/setup_assistant/setup_assistant_tutorial.html)"
+
+Running the following command to launch the MoveIt Setup Assistant:
+```
+roslaunch moveit_setup_assistant setup_assistant.launch
+```
+click button "Edit Existing MoveIt ", and select the folder "chin_moveit_config", then you can re-configure the arm:
+![image](https://user-images.githubusercontent.com/72239958/219332859-485bcbff-2f0d-41bb-b7bf-2bd11cd32ac9.png)
