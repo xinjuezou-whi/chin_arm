@@ -1,6 +1,11 @@
 # chin_arm
 MoveIt config package for arm Chin
 
+Currently only CRB-7 is constructed. With further projects related to other models like 4 and 12 are proceeded, they woubld be integrated either
+
+![chin_crb_7](https://user-images.githubusercontent.com/72239958/219651981-627b9100-2daa-47d1-b5ec-32d2eb57460c.png)
+
+
 This package includes arm's description defined by URDF, and moveit_config environment:
 ![chin_description](https://user-images.githubusercontent.com/72239958/219312265-73d45d7f-fae2-4bc7-9363-23ba745fddfa.gif)
 
