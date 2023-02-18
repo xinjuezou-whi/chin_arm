@@ -1,7 +1,7 @@
 moveit_setup_assistant_config:
   URDF:
-    package: chin_description
-    relative_path: urdf/chin_arm.urdf.xacro
+    package: chin_crb7_description
+    relative_path: urdf/chin_crb7.urdf.xacro
     xacro_args: ""
   SRDF:
     relative_path: config/chin_arm.srdf

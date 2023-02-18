@@ -2,6 +2,9 @@
 <robot name="chin_arm" xmlns:xacro="http://ros.org/wiki/xacro">
 
   <xacro:property name="arm_id" value="chin"/>
+  <xacro:property name="arm_model" value="crb7"/>
+  <xacro:property name="description_pkg" value="${arm_id}_${arm_model}_description"/>
+  <xacro:property name="mesh" value="yes"/>
   <!--is the robot being simulated in gazebo?-->
   <xacro:property name="gazebo" value="false"/>
 
@@ -33,9 +36,6 @@
   <xacro:property name="link_12_radius" value="0.045"/>
   <xacro:property name="link_13_height" value="0.077"/>
   <xacro:property name="link_13_radius" value="0.045"/>
-
-  <xacro:property name="mesh" value="yes"/>
-  <xacro:property name="description_pkg" value="${arm_id}_description"/>
   
   <material name="white">
     <color rgba="1 1 1 1"/>

@@ -2,12 +2,12 @@
 <launch>
   <!-- argument -->
   <arg name="arm" default="chin"/>
-  <arg name="type" default=""/>
-  <arg name="pkg_path" default="$(eval '$(find ' + arg('arm') + '_description' + arg('type') + ')')"/>
+  <arg name="arm_model" default="crb7"/>
+  <arg name="pkg_path" default="$(eval '$(find ' + arg('arm') + '_' + arg('arm_model') + '_description)')"/>
 
   <!-- depends on ros-<ros distro>-joint-state-publisher-gui, install with command: sudo apt install ros-<ros distro>-joint-state-publisher-gui -->
   <!-- urdf and robot state publisher -->
-  <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(arg pkg_path)/urdf/$(arg arm)_arm$(arg type).urdf.xacro'"/>
+  <arg name="urdf_file" default="$(find xacro)/xacro --inorder '$(arg pkg_path)/urdf/$(arg arm)_$(arg arm_model).urdf.xacro'"/>
   <param name="robot_description" command="$(arg urdf_file)"/>
   <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
   <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
