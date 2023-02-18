@@ -64,7 +64,7 @@ Running the setup_assistant.launch
 cd <your_workspace>
 roslaunch chin_crb7_moveit_config setup_assistant.launch
 ```
-then click button "Load Files", then you can re-configure the arm:
+and click button "Load Files", then you can re-configure the arm:
 ![image](https://user-images.githubusercontent.com/72239958/219829869-d83c8cfb-f34f-452f-a7a8-542d7913a77e.png)
 
 Or, running the MoveIt Setup Assistant directly with following command:
