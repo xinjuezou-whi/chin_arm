@@ -92,12 +92,12 @@
     <self_collision_geometries/>
   </xacro:link_with_sc>
   <joint name="${arm_id}_joint_1" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
     <origin rpy="0 0 0" xyz="0 0 ${link_base_height}"/>
     <parent link="${arm_id}_link_0"/>
     <child link="${arm_id}_link_1"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -106,12 +106,12 @@
     <self_collision_geometries/>
   </xacro:link_with_sc>
   <joint name="${arm_id}_joint_2" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
     <origin rpy="${-0.5*pi} 0 0" xyz="0 ${link_2_height} ${link_1_height}"/>
     <parent link="${arm_id}_link_1"/>
     <child link="${arm_id}_link_2"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -120,12 +120,12 @@
     <self_collision_geometries/>
   </xacro:link_with_sc>
   <joint name="${arm_id}_joint_3" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-2.7925" soft_upper_limit="2.7925"/>
-    <origin rpy="${pi} 0 0" xyz="0 -${link_4_height} 0"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-160.0*pi/180.0}" soft_upper_limit="${160.0*pi/180.0}"/>
+    <origin rpy="${pi} 0 0" xyz="0 ${-link_4_height} 0"/>
     <parent link="${arm_id}_link_2"/>
     <child link="${arm_id}_link_3"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-2.7925" upper="2.7925" effort="0" velocity="0"/>
+    <limit lower="${-160.0*pi/180.0}" upper="${160.0*pi/180.0}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -134,12 +134,12 @@
     <self_collision_geometries/>
   </xacro:link_with_sc>
   <joint name="${arm_id}_joint_4" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
-    <origin rpy="${pi} 0 0" xyz="0 ${link_7_height} -${link_8_height-link_6_height}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+    <origin rpy="${pi} 0 0" xyz="0 ${link_7_height} ${-(link_8_height-link_6_height)}"/>
     <parent link="${arm_id}_link_3"/>
     <child link="${arm_id}_link_4"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -149,11 +149,11 @@
   </xacro:link_with_sc>
   <joint name="${arm_id}_joint_5" type="revolute">
     <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
-    <origin rpy="${0.5*pi} 0 0" xyz="0 -${link_10_height} ${link_11_height}"/>
+    <origin rpy="${0.5*pi} 0 0" xyz="0 ${-link_10_height} ${link_11_height}"/>
     <parent link="${arm_id}_link_4"/>
     <child link="${arm_id}_link_5"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
@@ -162,19 +162,19 @@
     <self_collision_geometries/>
   </xacro:link_with_sc>
   <joint name="${arm_id}_joint_6" type="revolute">
-    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="-${pi}" soft_upper_limit="${pi}"/>
+    <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
     <origin rpy="${-0.5*pi} 0 0" xyz="0 ${link_12_height} ${link_11_height}"/>
     <parent link="${arm_id}_link_5"/>
     <child link="${arm_id}_link_6"/>
     <axis xyz="0 0 1"/>
-    <limit lower="-${pi}" upper="${pi}" effort="0" velocity="0"/>
+    <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
     <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
   </joint>
 
   <!--link7 to link6-->
   <link name="${arm_id}_link_7"/>
   <joint name="${arm_id}_joint_7" type="fixed">
-    <origin rpy="0 0 -${pi}" xyz="0 0 ${link_13_height}"/>
+    <origin rpy="0 0 ${-pi}" xyz="0 0 ${link_13_height}"/>
     <parent link="${arm_id}_link_6"/>
     <child link="${arm_id}_link_7"/>
   </joint>
