@@ -33,12 +33,17 @@ source <your_workspace>/devel/step.bash
 Running the urdf.launch to view the arm's description and TF relation: 
 ```
 cd <your_workspace>
-roslaunch chin_description urdf.launch
+roslaunch chin_crb7_description urdf.launch
 ```
 ![image](https://user-images.githubusercontent.com/72239958/219314281-e5eea179-324c-47e2-be29-86b7e4816b74.png)
 
 ### Interacting with the visualized arm
-Running the demo.launch. Once the visualized arm shows up, there should be two interactive markers. One marker corresponding to the orange colored arm will be used to set the "Goal State" for motion planning and the other marker corresponding to a green colored arm are used to set the "Start State" for motion planning.
+Running the demo.launch
+```
+cd <your_workspace>
+roslaunch chin_crb7_moveit_config demo.launch
+```
+Once the visualized arm shows up, there should be two interactive markers. One marker corresponding to the orange colored arm will be used to set the "Goal State" for motion planning and the other marker corresponding to a green colored arm are used to set the "Start State" for motion planning.
 
 Use these markers to drag the arm around and change its orientation. While the TCP meets your expectation, click button "Plan" to check the planning result
 ![image](https://user-images.githubusercontent.com/72239958/219316323-0cf5cb68-21c7-46e3-ac51-96a3712a1c1b.png)
@@ -54,9 +59,16 @@ The following video demonstrates the real arm control of Chin with WHI's control
 ## Configure arm
 By default, this package sets two fixed positions: home and ready, which can be used as the goal state for planning. Besides the fixed position, there are more settings MoveIt can make with the tool: "[MoveIt Setup Assistant](https://ros-planning.github.io/moveit_tutorials/doc/setup_assistant/setup_assistant_tutorial.html)"
 
-Running the following command to launch the MoveIt Setup Assistant:
+Running the setup_assistant.launch
+```
+cd <your_workspace>
+roslaunch chin_crb7_moveit_config setup_assistant.launch
+```
+then click button "Load Files", then you can re-configure the arm:
+![image](https://user-images.githubusercontent.com/72239958/219829869-d83c8cfb-f34f-452f-a7a8-542d7913a77e.png)
+
+Or, running the MoveIt Setup Assistant directly with following command:
 ```
 roslaunch moveit_setup_assistant setup_assistant.launch
 ```
-click button "Edit Existing MoveIt ", and select the folder "chin_moveit_config", then you can re-configure the arm:
-![image](https://user-images.githubusercontent.com/72239958/219332859-485bcbff-2f0d-41bb-b7bf-2bd11cd32ac9.png)
+then click button "Edit Existing MoveIt ", and click button "Browse" to select the folder "chin_moveit_config"
