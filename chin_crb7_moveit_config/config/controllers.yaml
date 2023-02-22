@@ -1,5 +1,5 @@
 controller_list:
-  - name: chin_arm/controllers/position
+  - name: chin_arm/controllers/command
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     joints:
