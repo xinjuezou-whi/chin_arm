@@ -73,5 +73,5 @@ roslaunch moveit_setup_assistant setup_assistant.launch
 ```
 then click button "Edit Existing MoveIt ", and click button "Browse" to select the folder "chin_moveit_config"
 
-## Missing details
+## Known issues
 Values in inertial tag are incorrect since the assembly model from Chin is not solid part therefore its mass cannot be calculated
