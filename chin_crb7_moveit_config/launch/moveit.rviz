@@ -4,9 +4,9 @@ Panels:
     Name: Displays
     Property Tree Widget:
       Expanded:
-        - /MotionPlanning1
+        - /MotionPlanning1/Planned Path1/Links1
       Splitter Ratio: 0.5
-    Tree Height: 70
+    Tree Height: 106
   - Class: rviz/Help
     Name: Help
   - Class: rviz/Views
@@ -23,19 +23,22 @@ Panels:
     Name: Motion Planning Tasks
     Tasks View:
       property_splitter:
-        - 48
-        - 459
-        - 153
-        - 26
+        - 57
+        - 550
+        - 183
+        - 31
       solution_sorting:
         column: 0
         order: 1
       solutions_splitter:
-        - 268
-        - 134
-      solutions_view_columns: ~
+        - 331
+        - 165
+      solutions_view_columns:
+        - 57
+        - 58
+        - 57
       tasks_view_columns:
-        - 95
+        - 158
         - 57
         - 57
         - 57
@@ -163,7 +166,7 @@ Visualization Manager:
         Show Workspace: false
         Start State Alpha: 1
         Start State Color: 0; 255; 0
-      Planning Scene Topic: move_group/monitored_planning_scene
+      Planning Scene Topic: /planning_scene
       Robot Description: robot_description
       Scene Geometry:
         Scene Alpha: 1
@@ -299,8 +302,72 @@ Visualization Manager:
       State Display Time: 0.05 s
       Task Solution Topic: /whi_gui/solution
       Tasks:
-        {}
+        task pipeline: 2
       Trail Step Size: 1
+      Value: true
+    - Class: moveit_rviz_plugin/PlanningScene
+      Enabled: true
+      Move Group Namespace: ""
+      Name: PlanningScene
+      Planning Scene Topic: move_group/monitored_planning_scene
+      Robot Description: robot_description
+      Scene Geometry:
+        Scene Alpha: 0.8999999761581421
+        Scene Color: 50; 230; 50
+        Scene Display Time: 0.009999999776482582
+        Show Scene Geometry: true
+        Voxel Coloring: Z-Axis
+        Voxel Rendering: Occupied Voxels
+      Scene Robot:
+        Attached Body Color: 150; 50; 150
+        Links:
+          All Links Enabled: true
+          Expand Joint Details: false
+          Expand Link Details: false
+          Expand Tree: false
+          Link Tree Style: Links in Alphabetic Order
+          chin_link_0:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chin_link_1:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chin_link_2:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chin_link_3:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chin_link_4:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chin_link_5:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chin_link_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          chin_link_7:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+        Robot Alpha: 1
+        Show Robot Collision: false
+        Show Robot Visual: true
       Value: true
   Enabled: true
   Global Options:
@@ -333,15 +400,15 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.21499955654144287
+      Pitch: 0.3349993824958801
       Target Frame: chin_link_0
       Value: Orbit (rviz)
-      Yaw: 0.7767639756202698
+      Yaw: 0.9217635989189148
     Saved: ~
 Window Geometry:
   Displays:
     collapsed: false
-  Height: 909
+  Height: 1056
   Help:
     collapsed: false
   Hide Left Dock: false
@@ -354,9 +421,9 @@ Window Geometry:
     collapsed: false
   MotionPlanning - Trajectory Slider:
     collapsed: false
-  QMainWindow State: 000000ff00000000fd00000002000000000000024f00000349fc0200000007fb000000100044006900730070006c0061007900730100000027000000c9000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a00560069006500770073000000010c000000a4000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c006900640065007201000000f6000000410000004100fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000013d000002330000022800ffffff00000001000001a800000349fc0200000003fb0000002a004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b00730100000027000003010000014b00fffffffb0000003c004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b00730020002d00200053006c0069006400650072010000032e000000420000004100fffffffb000000120020002d00200053006c006900640065007201000003c00000004300000000000000000000029e0000034900000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  QMainWindow State: 000000ff00000000fd00000002000000000000024f000003dcfc0200000008fb000000100044006900730070006c0061007900730100000027000000ed000000c900fffffffb0000000800480065006c00700000000342000000bb0000006e00fffffffb0000000a00560069006500770073000000010c000000a4000000a400fffffffb0000000c00430061006d00650072006100000002ff000001610000000000000000fb0000001e004d006f00740069006f006e00200050006c0061006e006e0069006e00670100000374000001890000000000000000fb00000044004d006f00740069006f006e0050006c0061006e006e0069006e00670020002d0020005400720061006a006500630074006f0072007900200053006c0069006400650072010000011a0000004c0000004100fffffffb0000001c004d006f00740069006f006e0050006c0061006e006e0069006e0067010000016c000002970000022800fffffffb000000280020002d0020005400720061006a006500630074006f0072007900200053006c00690064006500720000000000ffffffff00000000000000000000000100000206000003dcfc0200000003fb0000002a004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b00730100000027000003880000014b00fffffffb0000003c004d006f00740069006f006e00200050006c0061006e006e0069006e00670020005400610073006b00730020002d00200053006c006900640065007201000003b50000004e0000004100fffffffb000000120020002d00200053006c006900640065007201000003c0000000430000000000000000000002de000003dc00000001000000020000000100000002fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
   Views:
     collapsed: false
-  Width: 1697
-  X: 75
-  Y: 34
+  Width: 1855
+  X: 65
+  Y: 24
