@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='utf-8'?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <xacro:macro name="chin_arm" params="connected_to:='' arm_id model xyz=:'0 0 0' rpy=:'0 0 0' gazebo:=false">
+    <xacro:include filename="$(find chin_crb7_description)/urdf/components.xacro"/>
+
+    <xacro:property name="mesh_path" value="${arm_id}_${model}_description/meshes"/>
+
+    <xacro:property name="link_base_height" value="0.2038"/>
+    <xacro:property name="link_base_radius" value="0.095"/>
+    <xacro:property name="link_1_height" value="0.081"/>
+    <xacro:property name="link_1_radius" value="0.066"/>
+    <xacro:property name="link_2_height" value="0.082"/>
+    <xacro:property name="link_2_radius" value="0.066"/>
+    <xacro:property name="link_3_height" value="0.07"/>
+    <xacro:property name="link_3_radius" value="0.066"/>
+    <xacro:property name="link_4_height" value="0.398"/>
+    <xacro:property name="link_4_radius" value="0.055"/>
+    <xacro:property name="link_5_height" value="0.065"/>
+    <xacro:property name="link_5_radius" value="0.055"/>
+    <xacro:property name="link_6_height" value="0.063"/>
+    <xacro:property name="link_6_radius" value="0.055"/>
+    <xacro:property name="link_7_height" value="0.36"/>
+    <xacro:property name="link_7_radius" value="0.045"/>
+    <xacro:property name="link_8_height" value="0.083"/>
+    <xacro:property name="link_8_radius" value="0.045"/>
+    <xacro:property name="link_9_height" value="0.087"/>
+    <xacro:property name="link_9_radius" value="0.045"/>
+    <xacro:property name="link_10_height" value="0.083"/>
+    <xacro:property name="link_10_radius" value="0.045"/>
+    <xacro:property name="link_11_height" value="0.087"/>
+    <xacro:property name="link_11_radius" value="0.045"/>
+    <xacro:property name="link_12_height" value="0.083"/>
+    <xacro:property name="link_12_radius" value="0.045"/>
+    <xacro:property name="link_13_height" value="0.077"/>
+    <xacro:property name="link_13_radius" value="0.045"/>
+
+    <xacro:unless value="${not connected_to}">
+      <joint name="${arm_id}_joint_${connected_to}" type="fixed">
+        <origin xyz="${xyz}" rpy="${rpy}"/>
+        <parent link="${connected_to}"/>
+        <child link="${arm_id}_link_0"/>
+      </joint>
+    </xacro:unless>
+
+    <!--fixed link0-->
+    <xacro:link_with_sc name="0" gazebo="${gazebo}"
+      stl_path="package://${mesh_path}/visual/link_0.dae"
+      dae_path="package://${mesh_path}/collision/link_0.stl">
+      <self_collision_geometries/>
+    </xacro:link_with_sc>
+
+    <!--link1 to link0-->
+    <xacro:link_with_sc name="1" xyz="0 0 0" gazebo="${gazebo}"
+      stl_path="package://${mesh_path}/visual/link_1.dae"
+      dae_path="package://${mesh_path}/collision/link_1.stl">
+      <self_collision_geometries/>
+    </xacro:link_with_sc>
+    <joint name="${arm_id}_joint_1" type="revolute">
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+      <origin rpy="0 0 0" xyz="0 0 ${link_base_height}"/>
+      <parent link="${arm_id}_link_0"/>
+      <child link="${arm_id}_link_1"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+      <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+    </joint>
+
+    <!--link2 to link1-->
+    <xacro:link_with_sc name="2" xyz="0 0 0" gazebo="${gazebo}"
+      stl_path="package://${mesh_path}/visual/link_2.dae"
+      dae_path="package://${mesh_path}/collision/link_2.stl">
+      <self_collision_geometries/>
+    </xacro:link_with_sc>
+    <joint name="${arm_id}_joint_2" type="revolute">
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+      <origin rpy="${-0.5*pi} 0 0" xyz="0 ${link_2_height} ${link_1_height}"/>
+      <parent link="${arm_id}_link_1"/>
+      <child link="${arm_id}_link_2"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+      <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+    </joint>
+
+    <!--link3 to link2-->
+    <xacro:link_with_sc name="3" xyz="0 0 0" gazebo="${gazebo}"
+      stl_path="package://${mesh_path}/visual/link_3.dae"
+      dae_path="package://${mesh_path}/collision/link_3.stl">
+      <self_collision_geometries/>
+    </xacro:link_with_sc>
+    <joint name="${arm_id}_joint_3" type="revolute">
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-160.0*pi/180.0}" soft_upper_limit="${160.0*pi/180.0}"/>
+      <origin rpy="${pi} 0 0" xyz="0 ${-link_4_height} 0"/>
+      <parent link="${arm_id}_link_2"/>
+      <child link="${arm_id}_link_3"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-160.0*pi/180.0}" upper="${160.0*pi/180.0}" effort="0" velocity="0"/>
+      <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+    </joint>
+
+    <!--link4 to link3-->
+    <xacro:link_with_sc name="4" xyz="0 0 0" gazebo="${gazebo}"
+      stl_path="package://${mesh_path}/visual/link_4.dae"
+      dae_path="package://${mesh_path}/collision/link_4.stl">
+      <self_collision_geometries/>
+    </xacro:link_with_sc>
+    <joint name="${arm_id}_joint_4" type="revolute">
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+      <origin rpy="${pi} 0 0" xyz="0 ${link_7_height} ${-(link_8_height-link_6_height)}"/>
+      <parent link="${arm_id}_link_3"/>
+      <child link="${arm_id}_link_4"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+      <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+    </joint>
+
+    <!--link5 to link4-->
+    <xacro:link_with_sc name="5" xyz="0 0 0" gazebo="${gazebo}"
+      stl_path="package://${mesh_path}/visual/link_5.dae"
+      dae_path="package://${mesh_path}/collision/link_5.stl">
+      <self_collision_geometries/>
+    </xacro:link_with_sc>
+    <joint name="${arm_id}_joint_5" type="revolute">
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+      <origin rpy="${0.5*pi} 0 0" xyz="0 ${-link_10_height} ${link_11_height}"/>
+      <parent link="${arm_id}_link_4"/>
+      <child link="${arm_id}_link_5"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+      <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+    </joint>
+
+    <!--link6 to link5-->
+    <xacro:link_with_sc name="6" xyz="0 0 0" gazebo="${gazebo}"
+      stl_path="package://${mesh_path}/visual/link_6.dae"
+      dae_path="package://${mesh_path}/collision/link_6.stl">
+      <self_collision_geometries/>
+    </xacro:link_with_sc>
+    <joint name="${arm_id}_joint_6" type="revolute">
+      <safety_controller k_position="100.0" k_velocity="40.0" soft_lower_limit="${-pi}" soft_upper_limit="${pi}"/>
+      <origin rpy="${-0.5*pi} 0 0" xyz="0 ${link_12_height} ${link_11_height}"/>
+      <parent link="${arm_id}_link_5"/>
+      <child link="${arm_id}_link_6"/>
+      <axis xyz="0 0 1"/>
+      <limit lower="${-pi}" upper="${pi}" effort="0" velocity="0"/>
+      <dynamics D="1" K="7000" damping="0.003" friction="0.0" mu_coulomb="0" mu_viscous="16"/>
+    </joint>
+
+    <!--link7 to link6-->
+    <link name="${arm_id}_link_7"/>
+    <joint name="${arm_id}_joint_7" type="fixed">
+      <origin rpy="0 0 ${-pi}" xyz="0 0 ${link_13_height}"/>
+      <parent link="${arm_id}_link_6"/>
+      <child link="${arm_id}_link_7"/>
+    </joint>
+
+  </xacro:macro>
+</robot>

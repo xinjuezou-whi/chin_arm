@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<!--link-->
+<xacro:macro name="link_with_sc"  params="name length:='0' radius:='0' radius xyz:='0 0 0' rpy:='0 0 0' color:='' prefix:='chin' stl_path:='' dae_path:='' **self_collision_geometries gazebo:=false">
+  <!--sub-link defining detailed meshes for collision with environment-->
+  <link name="${prefix}_link_${name}">
+    <visual>
+      <origin xyz="${xyz}" rpy="${rpy}"/>
+      <geometry>
+        <xacro:if value="${stl_path == ''}">
+          <cylinder length="${length}" radius="${radius}"/>
+        </xacro:if>
+        <xacro:unless value="${stl_path == ''}">
+          <mesh filename="${stl_path}"/>
+        </xacro:unless>
+      </geometry>
+      <xacro:if value="${stl_path == ''}">
+        <material name="${color}"/>
+      </xacro:if>
+    </visual>
+    <collision>
+     <origin xyz="${xyz}" rpy="${rpy}"/>
+      <geometry>
+        <xacro:if value="${dae_path == ''}">
+          <cylinder length="${length}" radius="${radius}"/>
+        </xacro:if>
+        <xacro:unless value="${dae_path == ''}">
+          <mesh filename="${dae_path}"/>
+        </xacro:unless>
+      </geometry>
+    </collision>
+    <xacro:if value="${gazebo}">
+      <xacro:inertial_props name="${name}"/>
+    </xacro:if>
+  </link>
+</xacro:macro>
+
+</robot>
