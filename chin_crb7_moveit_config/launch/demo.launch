@@ -1,5 +1,13 @@
 <launch>
 
+  <!-- urdf and srdf file -->
+  <arg name="urdf_file" default="$(find chin_crb7_description)/urdf/chin_crb7.urdf.xacro"/>
+  <arg name="srdf_file" default="$(find chin_crb7_moveit_config)/config/chin_arm.srdf"/>
+  <arg name="base_link" default="chin_link_0"/>
+  <!--<arg name="urdf_file" default="$(find whi_amr_description)/urdf/NaviBOT_L1_combined_diff.urdf.xacro"/>
+  <arg name="srdf_file" default="$(find chin_crb7_moveit_config)/config/chin_arm_combined.srdf"/>
+  <arg name="base_link" default="base_link"/>-->
+
   <!-- specify the planning pipeline -->
   <arg name="pipeline" default="ompl" />
 
@@ -24,7 +32,8 @@
   <arg name="use_rviz" default="true" />
 
   <!-- If needed, broadcast static tf for robot root -->
-  <node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 world chin_link_0" />
+  <!--<node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 world chin_link_0" />-->
+  <node pkg="tf2_ros" type="static_transform_publisher" name="virtual_joint_broadcaster_0" args="0 0 0 0 0 0 world $(arg base_link)" />
 
   <group if="$(eval arg('moveit_controller_manager') == 'fake')">
     <!-- We do not have a real robot connected, so publish fake joint states via a joint_state_publisher
@@ -44,6 +53,8 @@
 
   <!-- Run the main MoveIt executable without trajectory execution (we do not have controllers configured by default) -->
   <include file="$(dirname)/move_group.launch">
+    <arg name="urdf_file" value="$(arg urdf_file)"/>
+    <arg name="srdf_file" value="$(arg srdf_file)"/>
     <arg name="allow_trajectory_execution" value="true"/>
     <arg name="moveit_controller_manager" value="$(arg moveit_controller_manager)" />
     <arg name="fake_execution_type" value="$(arg fake_execution_type)"/>

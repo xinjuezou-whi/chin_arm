@@ -1,5 +1,9 @@
 <launch>
 
+  <!-- urdf and srdf file -->
+  <arg name="urdf_file" default=""/>
+  <arg name="srdf_file" default=""/>
+
   <!-- GDB Debug Option -->
   <arg name="debug" default="false" />
   <arg unless="$(arg debug)" name="launch_prefix" value="" />
@@ -43,6 +47,8 @@
   <arg name="load_robot_description" default="false" />
   <!-- load URDF, SRDF and joint_limits configuration -->
   <include file="$(dirname)/planning_context.launch">
+    <arg name="urdf_file" value="$(arg urdf_file)"/>
+    <arg name="srdf_file" value="$(arg srdf_file)"/>
     <arg name="load_robot_description" value="$(arg load_robot_description)" />
   </include>
 
