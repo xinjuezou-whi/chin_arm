@@ -17,6 +17,7 @@
         <joint name="chin_joint_4"/>
         <joint name="chin_joint_5"/>
         <joint name="chin_joint_6"/>
+        <joint name="chin_joint_7"/>
     </group>
     <group name="chin_eef">
         <joint name="chin_joint_7"/>
@@ -47,7 +48,7 @@
         <joint name="chin_joint_6" value="0"/>
     </group_state>
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
-    <end_effector name="eef" parent_link="chin_link_6" group="chin_eef" parent_group="chin_arm"/>
+    <end_effector name="eef" parent_link="chin_link_7" group="chin_eef" parent_group="chin_arm"/>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="virtual_joint" type="fixed" parent_frame="world" child_link="chin_link_0"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
