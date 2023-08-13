@@ -146,11 +146,11 @@
     </joint>
 
     <!--link7 to link6-->
-    <link name="${arm_id}_link_7"/>
-    <joint name="${arm_id}_joint_7" type="fixed">
-      <origin rpy="0 0 0" xyz="0 0 ${link_13_height}"/>
+    <link name="${arm_id}_link_tcp"/>
+    <joint name="${arm_id}_joint_tcp" type="fixed">
+      <origin rpy="${pi} 0 ${-0.5 * pi}" xyz="0 0 ${link_13_height}"/>
       <parent link="${arm_id}_link_6"/>
-      <child link="${arm_id}_link_7"/>
+      <child link="${arm_id}_link_tcp"/>
     </joint>
 
   </xacro:macro>
