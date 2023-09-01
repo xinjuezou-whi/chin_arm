@@ -1,5 +1,5 @@
-stomp/chin_arm:
-  group_name: chin_arm
+stomp/chin_crb7:
+  group_name: chin_crb7
   optimization:
     num_timesteps: 60
     num_iterations: 40

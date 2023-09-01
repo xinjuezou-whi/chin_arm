@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<robot name="chin_arm" xmlns:xacro="http://ros.org/wiki/xacro">
+<robot name="chin_crb7" xmlns:xacro="http://ros.org/wiki/xacro">
   <xacro:include filename="$(find chin_crb7_description)/urdf/chin_arm.xacro"/>
 
   <xacro:chin_arm arm_id="chin" model="crb7"/>

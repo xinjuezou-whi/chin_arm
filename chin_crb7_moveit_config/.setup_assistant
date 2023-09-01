@@ -4,8 +4,8 @@ moveit_setup_assistant_config:
     relative_path: urdf/chin_crb7.urdf.xacro
     xacro_args: ""
   SRDF:
-    relative_path: config/chin_arm.srdf
+    relative_path: config/chin_crb7.srdf
   CONFIG:
     author_name: Xinjue
     author_email: xinjue.zou.whi@gmail.com
-    generated_timestamp: 1691895509
+    generated_timestamp: 1693460800

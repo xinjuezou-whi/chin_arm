@@ -2,10 +2,10 @@
 
   <!-- urdf and srdf file -->
   <arg name="urdf_file" default="$(find chin_crb7_description)/urdf/chin_crb7.urdf.xacro"/>
-  <arg name="srdf_file" default="$(find chin_crb7_moveit_config)/config/chin_arm.srdf"/>
+  <arg name="srdf_file" default="$(find chin_crb7_moveit_config)/config/chin_crb7.srdf"/>
   <arg name="base_link" default="chin_link_0"/>
   <!--<arg name="urdf_file" default="$(find whi_amr_description)/urdf/NaviBOT_L1_combined_diff.urdf.xacro"/>
-  <arg name="srdf_file" default="$(find chin_crb7_moveit_config)/config/chin_arm_combined.srdf"/>
+  <arg name="srdf_file" default="$(find chin_crb7_moveit_config)/config/chin_crb7_combined.srdf"/>
   <arg name="base_link" default="base_link"/>-->
 
   <!-- specify the planning pipeline -->
