@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package format="2">
   <name>chin_crb7_description</name>
-  <version>0.0.0</version>
+  <version>0.0.1</version>
   <description>The chin_crb7_description package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
@@ -52,12 +52,15 @@
   <build_depend>joint_state_publisher</build_depend>
   <build_depend>robot_state_publisher</build_depend>
   <build_depend>xacro</build_depend>
+  <build_depend>actionlib</build_depend>
   <build_export_depend>joint_state_publisher</build_export_depend>
   <build_export_depend>robot_state_publisher</build_export_depend>
   <build_export_depend>xacro</build_export_depend>
+  <build_export_depend>actionlib</build_export_depend>
   <exec_depend>joint_state_publisher</exec_depend>
   <exec_depend>robot_state_publisher</exec_depend>
   <exec_depend>xacro</exec_depend>
+  <exec_depend>actionlib</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->
