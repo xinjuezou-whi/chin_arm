@@ -10,7 +10,7 @@
   <arg name="base_link" default="chin_link_0" if="$(eval arg('vehicle') == '')"/>
 
   <arg name="urdf_file" default="$(find whi_amr_description)/urdf/NaviBOT_$(arg vehicle)_$(vehicle_model)_chin_crb7.urdf.xacro" unless="$(eval arg('vehicle') == '')"/>
-  <arg name="srdf_file" default="$(find chin_crb7_moveit_config)/config/chin_crb7_$(vehicle).srdf" unless="$(eval arg('vehicle') == '')"/>
+  <arg name="srdf_file" default="$(find chin_crb7_moveit_config)/config/chin_crb7_combined.srdf" unless="$(eval arg('vehicle') == '')"/>
   <arg name="base_link" default="base_link" unless="$(eval arg('vehicle') == '')"/>
 
   <!-- specify the planning pipeline -->
